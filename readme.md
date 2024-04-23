@@ -10,8 +10,14 @@ The string "guest:guest@localhost:5672" is essentially a URI-like syntax used to
 
 ### Slow Subscriber Simulation:
 
-<img width="1469" alt="Screenshot 2024-04-24 at 06 21 42" src="https://github.com/PeakFiction/Tutorial8Subscriber/assets/112671939/c6e2557e-a82c-4df6-bcd7-537a15ece910">
+<img width="1470" alt="Screenshot 2024-04-24 at 06 54 09" src="https://github.com/PeakFiction/Tutorial8Subscriber/assets/112671939/55d61eb0-6aa5-4127-8f24-e081f92459d8">
 
 https://youtu.be/LNvzbykMuI8
 
-The total number of queue for my machine was 6, this is because I was running cargo run three times. There's supposed to be 15, where each cargo run is 5 messages, unfortunately due to the delay, the mchine only recognises 6 messages in a single time frame
+The total number of queue for my machine was 18, this is because I was running cargo run five times. There's supposed to be 25, where each cargo run is 5 messages, unfortunately due to the delay, the mchine only recognises 18 messages in a single time frame
+
+### Slow Subscriber Simulation With Three Susbcribers:
+
+![image](https://github.com/PeakFiction/Tutorial8Subscriber/assets/112671939/c97dfa15-146f-42e9-92a2-0524af1c6e5f)
+
+The chart reveals that the total number of queues became 13, a decrease from the previous count of 21 when running 3 subscribers consecutively and executing 5 instances of cargo run sequentially in the publisher. This phenomenon can be attributed to the subscriber's initiation of multithreading, as multiple messages are being transmitted and received concurrently during the communication event facilitated by the publisher. This further implies that the messages are being sent in parallel across 3 distinct subscribers. Additionally, multithreading in this context enhances the performance of the message communication between the subscriber and publisher over a certain time period. Multithreading leverages multiple threads within a single process to facilitate communication between the subscriber and publisher. Potential improvements to the code could involve introducing parallelism to the publisher's code. This would enable the simultaneous transmission of numerous requests, thereby allowing for a more accurate simulation of higher traffic comprising multiple messages.
