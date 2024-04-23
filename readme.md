@@ -9,3 +9,9 @@ The string "guest:guest@localhost:5672" is essentially a URI-like syntax used to
 ## Screenshots
 
 ### Slow Subscriber Simulation:
+
+<img width="1469" alt="Screenshot 2024-04-24 at 06 21 42" src="https://github.com/PeakFiction/Tutorial8Subscriber/assets/112671939/c6e2557e-a82c-4df6-bcd7-537a15ece910">
+
+https://youtu.be/LNvzbykMuI8
+
+The total number of queue for my machine was 6, this is because I was running cargo run three times. There's supposed to be 15, where each cargo run is 5 messages, unfortunately due to the delay, the mchine only recognises 6 messages in a single time frame
